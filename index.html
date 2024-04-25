@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+
+
+<title>Query Traffic Violations</title>
+<meta name="format-detection" content="telephonne=no" />
+<link rel="shortcut icon" type="image/x-icon" href="https://www.absher.sa/portal/traffic/images/favicon.ico" />
+
+
+	<script type="text/javascript">
+		try { 
+			var environment = '';	
+			(''.trim() == "") ? document.querySelector("html").classList.add('prod') : document.querySelector("html").classList.add('') ;
+		} catch(eee) {}
+	</script>
+
+		<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/css/resposivedatatable/jquery.dataTables.css" />
+		<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/css/resposivedatatable/dataTables.responsive.css" />
+		<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/js/jquery-ui/jquery-ui.min.css" />
+		<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/css/flora.calendars.picker.css" />
+	
+
+	<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/fontello/css/fontello.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/css/tabs.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/css/custom.css">
+	<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/css/eservices_style.css">    
+    <link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/css/bootstrap-theme.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/css/theme.css?v=202404171813">
+    <link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/css/IndiTheme.css?v=202404171813">
+    <link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/local/css/font_arabic.css" />
+
+    <!-- Script starts -->
+    <script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/jquery-ui/jquery-ui.min.js"></script>
+	<!-- Resolve Bootstrap Conflict with Jquery UI library     -->
+    <script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/jquery.min-1.11.1.js"></script>
+    <script type="text/javascript">
+    	var jq_bt = $.noConflict(true);
+    </script>
+    <script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/jquery.min-1.7.2.js"></script>
+    <script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/calendar_moi_dateConverter.js"></script>
+
+		
+		<script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/jquery.sliderTabs.js"></script>
+		<script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/custom.js"></script>
+		
+			<script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/resposivedatatable/dataTable.custom.en.js"></script>
+		
+		<script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/resposivedatatable/jquery.dataTables.min.js"></script>
+		<script type="text/javascript" src="https://www.absher.sa/portal/traffic/local/js/resposivedatatable/dataTables.responsive.min.js"></script>
+		
+		<script src="https://www.absher.sa/portal/traffic/portlet_resources/calendar/jquery.plugin.js"></script>
+		<script src="https://www.absher.sa/portal/traffic/portlet_resources/calendar/jquery.calendars.js"></script>
+		<script src="https://www.absher.sa/portal/traffic/portlet_resources/calendar/jquery.calendars.plus.js"></script>
+		<script src="https://www.absher.sa/portal/traffic/portlet_resources/calendar/jquery.calendars.picker.js"></script>
+		<script src="https://www.absher.sa/portal/traffic/portlet_resources/calendar/jquery.calendars.ummalqura.js"></script>
+		<script src="https://www.absher.sa/portal/traffic/portlet_resources/calendar/jquery.calendars.imoi.initGregWithHijri.js"></script> 
+		<script src="https://www.absher.sa/portal/traffic/portlet_resources/calendar/jquery.calendars.imoi.initGregWithHijri.Single.js"></script>
+		<link rel="stylesheet" type="text/css" href="https://www.absher.sa/portal/traffic/module/style.css?v=202404171813">
+		<script type="text/javascript" src="https://www.absher.sa/portal/traffic/module/elemQuery.js?v=202404171813"></script>
+		<script type="module" src="https://www.absher.sa/portal/traffic/module/module.js?v=202404171813"></script>
+		
+	</head>
+
+<body class="ltr traffic">	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+    
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="topLinksId">
+	
+		<a href="javascript:" id="return-to-top">
+			<span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+			<span class="sr-only">top</span>
+		</a>
+		<div class="container linkto-individuals-section"></div>
+		<div class="affix-wrapper"></div>
+	
+	
+	
+	<header class="main-header main-inner-header">
+	    <nav class="navbar navbar-default navbar-main">
+	        <div class="container">
+	        	<div class="row">
+		        	<div class="col-xs-3 col-md-3 col-lg-3 left-side-top">
+			            <div class="navbar-header">
+			            	<a href="index.html#main-content" class="sr-only-focusable" id="skip-maincontent" tabindex="0">skip to main content</a>
+			            	
+			                	<a class="navbar-brand" href="https://www.absher.sa/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeDRH5xYBLQkCos5jgZOQUZOxgYG7v5GWBWgWFSQG1HpmumoCABjROTb/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvZW4!/?uri=nm:oid:wps.Login" aria-label="Absher vision 2030 kingdom of saudi arabia" alt="Absher"><div class="mainlogo" alt="Absher"></div></a>
+			                
+			                
+			            </div>
+		        	</div>
+				
+					<div class="col-xs-3 col-md-3 col-lg-3 navbar-innerpage-moi mobile"  style="width: auto;">
+						
+							<a href="https://www.absher.sa/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L0lHSkovd0RNQU5rQUVnQSEhLzROVkUvYXI!/" alt="Change language to Arabic" aria-label="Change language to Arabic" lang="ar" class="lang-mobile">
+							<strong>العربية</strong>
+							
+							</a>
+						
+														
+		        	</div>		
+				
+ 					
+				       	<div class="col-xs-6 padding-0 col-md-7" style="width: auto;">
+			    			<ul class="topLinks before-login">
+								
+									    			
+								
+<!-- 								<li class="topLinks_box changelang desktop" id="topLinks_langid" >
+									
+										<a href="/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L0lHSkovd0RNQU5rQUVnQSEhLzROVkUvYXI!/" alt="Change language to Arabic" aria-label="Change language to Arabic" lang="ar">
+										<div class="spritejobs box1" alt="arabic"></div>
+										<strong>العربية</strong>
+										</a>
+									
+									
+								</li> -->	
+																					
+							</ul>	
+				        </div>
+			        
+		        	
+					<div class="col-xs-3 col-md-3 col-lg-3 navbar-innerpage-moi desktop"  style="width: auto;">
+	        			<ul class="topLinks before-login pull-right">
+	        				<li class="topLinks_box ">
+						   		<!-- <a href="?uri=nm:oid:absher.userguide.search" class="searchlink" alt="Absher Search"> -->
+						   			<a href="index.html#search" class="searchlink" alt="Search">
+						   			<div class="spritejobs box1 icon-search" alt="Search"></div>
+									<strong>Search</strong>
+								</a>
+							</li>
+						</ul>
+						
+							<a href="https://www.absher.sa/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L0lHSkovd0RNQU5rQUVnQSEhLzROVkUvYXI!/" alt="Change language to Arabic" aria-label="Change language to Arabic" lang="ar" class="lang-mobile">
+							<strong>العربية</strong>
+							
+							</a>
+						
+														
+		        	</div>		
+				
+
+				
+			       
+
+					
+		    </div>
+					</div>
+	            </div>
+	        </div>
+	    </nav>
+	</header>
+	</div>
+
+	<script>
+		//function callLogout() {Object.keys(localStorage).forEach(function(key){if (/^DataTables_Absher_*/.test(key)) {localStorage.removeItem(key);}else if(/^allstrge*/.test(key)){localStorage.removeItem(key);}else if(/^incount*/.test(key)){localStorage.removeItem(key);}});document.getElementById('logoutFormId').submit();}
+		function callLogout() {
+			Object.keys(localStorage).forEach(function(key){
+			if (/^DataTables_Absher_*/.test(key)) {
+				localStorage.removeItem(key);
+			}
+			else if(/^allstrge*/.test(key)){
+				localStorage.removeItem(key);
+			}
+			else if(/^incount*/.test(key)){
+				localStorage.removeItem(key);
+			}});
+			
+			//Clearing Absher Business Chat Cookies
+			//clearChatCookies();
+			var cookies = document.cookie.split(";");
+			for(var i=0; cookies.length; i++){
+				if(cookies[i] != undefined){
+					var cookieName = cookies[i].split("=");
+					if(cookieName[0].indexOf("_genesys.widgets") >=0){ 
+						document.cookie = cookieName[0]+'="";-1; path=/';
+					}
+				} else {
+					break;
+				}
+			}
+			document.getElementById('logoutFormId').submit();
+		}
+	</script>
+	<div class="main-header-afterlogin">
+		<div class="container">
+			
+		</div>
+	</div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	<script>
+		currentLocale = 'en' ;
+
+		if((currentLocale != "ar") && (currentLocale != "en")){
+			if(currentLocale.indexOf("en") > -1){
+				location.replace('/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L0lHSkovd0RNQU5rQUVnQSEhLzROVkUvZW4!/');
+			} else {
+				location.replace('/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L0lHSkovd0RNQU5rQUVnQSEhLzROVkUvYXI!/');
+			}
+		}
+	</script>
+
+
+
+
+
+<main id="menuId" class="innerpage-wrapper topbanner">
+	<div class="container-fluid">
+		<div class="wow zoomIn"></div>
+	</div>
+</main>
+
+
+
+
+
+	<div class="container">
+
+			<ol class="breadcrumb">			
+										
+								<li class="active">Query Traffic Violations</li>
+								<script>selectedPage = 'Query Traffic Violations';</script>
+							
+			</ol>
+		
+	</div>	
+<section class="inner-main">
+		<div class="container">
+			<div class="row">
+				<div class="hiddenWidgetsDiv">
+	<!-- widgets in this container are hidden in the UI by default -->
+	<div class='component-container wpthemeFull ibmDndRow wpthemeCol12of12 wpthemeRow hiddenWidgetsContainer id-Z7_R61KSSDS3UUPLI69782QT5UA20' name='ibmHiddenWidgets' ></div><div style="clear:both"></div>
+</div>
+<!-- this layout has one main container -->
+<div class="wptheme1Col">
+	<div class='component-container wpthemeFull wpthemeLeft wpthemeCol ibmDndColumn wpthemeCol12of12 wpthemePrimary id-Z7_0G4L17NFNMDA2D1VDAQJG4TPA1' name='ibmMainContainer' ><div class='component-control id-Z7_62LC1H82K8AU806E55N3A13022' ><!--AbsherIndividualsSkin-->
+
+<div><span id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22626"><form id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610" method="post" action="http://192.168.145.126/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L2dBISEvZ0FBIS9nQSEh/p0/IZ7_62LC1H82K8AU806E55N3A13022=CZ6_62LC1H82K8AU806E55N3A130S3=LA0=Ejavax.servlet.include.path_info!QCPviewQCPViolationInquiryView.xhtml==/#Z7_62LC1H82K8AU806E55N3A13022" enctype="application/x-www-form-urlencoded"><input type="hidden" name="javax.faces.encodedURL" value="/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L2dBISEvZ0FBIS9nQSEh/p0/IZ7_62LC1H82K8AU806E55N3A13022=CZ6_62LC1H82K8AU806E55N3A130S3=NJviewQCPViolationInquiryView.xhtml=/" />	
+				<link rel="stylesheet" type="text/css" href="https://www.absher.sa/wps/PA_PTViolationInquiry/resources/css/styles.css" /> 		
+					<div id="eservice-container" class="service-main-container"><div xmlns:hx="http://www.ibm.com/jsf/html_extended">
+	
+		<div id="eservice-container" class="service-main-container">
+			<div class="service-messages"><div id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cbc4"></div>
+			</div>
+
+			
+
+			<div class="common-body">
+				<div class="service-sub-container">
+                   
+
+                    <div class="service-sub-body">		
+	                    <table class="tbl3column">
+	                    	<tr>
+	                    		<td><span id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cbb1">ID Number</span><span class="mandatoryAsterisk">*</span></td>
+	                    		<td>:</td>
+	                    		<td><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cbbe" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cbbe" type="text" value="" onkeypress="return numbersOnly(event);" maxlength="10" /></td>
+	                    	</tr>
+	                    	<tr>
+	                    		<td><span id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cbab">Choose Type</span><span class="mandatoryAsterisk">*</span></td>
+	                    		<td>:</td>
+	                    		<td>
+	                    			<table class="custom-radio-group">
+	                    				<tr>
+	                    					<td>
+	                    						<input type="radio" name="select-type" id="select-type-1" value="1" />
+	                    						<label for="select-type-1">Violation Number</label>
+	                    					</td>
+	                    					<td>
+	                    						<input type="radio" name="select-type" id="select-type-2" value="2" />
+	                    						<label for="select-type-2">Date of Birth</label>
+	                    					</td>
+	                    				</tr>
+	                    			</table>
+	                    		</td>
+	                    	</tr>
+	                    	<tr class="js-violation-wrapper hide">
+	                    		<td><span id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb98">Violation Number</span></td>
+	                    		<td>:</td>
+	                    		<td><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb85" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb85" type="text" value="" /></td>
+	                    	</tr>
+	                    	<tr class="js-dob-wrapper hide">
+								<td></td>
+								<td></td>
+								<td><table class="customToggle" id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb72"><tr>		<td><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb72:0" type="radio" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb72" checked="checked" value="1" onchange="javascript:changeCalendar(this.value);" onclick="javascript:changeCalendar1(this.value);" /><label for="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb72:0"> Hijri</label></td>		<td><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb72:1" type="radio" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb72" value="2" onchange="javascript:changeCalendar(this.value);" onclick="javascript:changeCalendar1(this.value);" /><label for="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb72:1"> Gregorian</label></td></tr></table>								
+								</td>
+							</tr>
+	                    	<tr class="js-dob-wrapper hide">
+								<td class="labels"><span id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb46">Date of Birth</span> <span class="mandatoryAsterisk">*</span></td>
+								<td class="colon">:</td>
+								<td>
+									<div id="hijra_component" class="lblcal"><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:date_of_birthh" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:date_of_birthh" type="text" value="" onkeypress="return false;" maxlength="10" class="hasDatepick embed" />
+										
+									</div>
+								
+									<div id="gregorian_component" class="lblcal"><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:date_of_birthg" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:date_of_birthg" type="text" value="" onkeypress="return false;" maxlength="10" class="hasDatepick embed" />
+									</div>						
+								</td>
+							</tr>
+							<tr class="js-captach-wrapper hide">
+								<td></td>
+								<td></td>
+								<td>
+									<div class="captchaForm">
+										<span class="captchaForm"><img alt="capcha" src="https://www.absher.sa/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L2dBISEvZ0FBIS9nQSEh/p0/IZ7_62LC1H82K8AU806E55N3A13022=CZ6_62LC1H82K8AU806E55N3A130S3=NJns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cbfd=EcapchaId!capchaId==/" class="captchaImg" /></span><a href="index.html#" class="captchaRefresh" onclick="captchaReload();"></a>
+									</div>
+								</td>
+							</tr>
+							<tr class="js-captach-wrapper hide">
+								<td><label id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb2d">Enter Image Code</label><span class="mandatoryAsterisk">*</span></td>
+								<td>:</td>
+								<td><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:captcha" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:captcha" type="text" value="" onkeypress="return numbersOnly(event);" maxlength="4" /></td>
+							</tr>
+	                    </table>
+                	</div>
+					
+                	<div class="formButtons" align="center">
+                	    <input type="hidden" value="en" class="locale" /><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb07" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cb07" type="submit" value="Next" class="round-button mainButton" /><input id="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870caf4" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870caf4" type="submit" value="Clear" class="round-button round-outline" />	
+					    <input type="hidden" value="1" class="hiddenValues" /> 				
+					</div>
+	           	</div>
+			</div>
+
+		</div>
+		
+	<script>
+	//<![CDATA[
+	
+			$(".lblcal input[type='text']").eq(0).attr('id','date_of_birthh');
+			$(".lblcal input[type='text']").eq(1).attr('id','date_of_birthg');
+			$(".lblcal input[type='text']").eq(2).attr('id','startDate');
+			$(".lblcal input[type='text']").eq(3).attr('id','startDateG');
+			$(".lblcal input[type='text']").eq(4).attr('id','endDate');
+			$(".lblcal input[type='text']").eq(5).attr('id','endDateG');
+			
+			
+			$(function (){
+			
+			$("input[name='select-type']").on('change', function(){
+				let selectedType = $("input[name='select-type']:checked").val();
+
+				if($('.js-captach-wrapper').hasClass('hide')){
+					$('.js-captach-wrapper').removeClass('hide');
+				}
+
+				if(selectedType == 1){
+					$('.js-violation-wrapper').removeClass('hide');
+					$('.js-dob-wrapper').addClass('hide');
+				}else if(selectedType == 2){
+					$('.js-dob-wrapper').removeClass('hide');
+					$('.js-violation-wrapper').addClass('hide');
+				}
+			});
+
+			console.log(document.querySelectorAll("input[name='select-type']:checked")?.item(0)?.value);
+				
+			initCalendars('startDate','startDateG','/portal/individuals/portlet_resources/img/',$('.locale').val(),false,'dd/mm/yyyy','0y','20y');
+            initCalendars('endDate','endDateG','/portal/individuals/portlet_resources/img/',$('.locale').val(),false,'dd/mm/yyyy','0y','20y');    
+            initCalendars('date_of_birthh','date_of_birthg','/portal/individuals/portlet_resources/img/',$('.locale').val(),false,'dd/mm/yyyy','-100y','-0y');
+				
+				var hiddenValueFromBeanForBirthDate=$('.hiddenValues').val();
+				var hiddenValueFromBeanForAuthorization=$('.hiddenValues2').val();
+				var hiddenValueFromBeanForAuthorizationEndDate=$('.hiddenValues3').val();
+				changeCalendar3(hiddenValueFromBeanForAuthorizationEndDate)
+				changeCalendar2(hiddenValueFromBeanForAuthorization)
+				changeCalendar1(hiddenValueFromBeanForBirthDate)
+			
+				});
+				
+				
+		 function changeCalendar1(value){
+						if(value=='1'){
+							$('#hijra_component').show();
+							$('#gregorian_component').hide();
+							
+							
+						}else{
+							$('#hijra_component').hide();
+							$('#gregorian_component').show();
+							
+						}
+					}
+	
+	
+	
+							
+		 function changeCalendar2(value){
+						if(value=='1'){
+				
+							$('#startDateH__Container').show();
+							
+							$('#startDateG__Container').hide();
+							
+							
+							
+						}else{
+
+							$('#startDateH__Container').hide();
+							
+							$('#startDateG__Container').show();
+							
+						}
+					}
+					
+					function changeCalendar3(value){
+					
+						if(value=='1'){
+							
+							$('#endDateH__Container').show();
+							
+							$('#endDateG__Container').hide();
+							
+						}else{
+
+							
+							
+							$('#endDateH__Container').hide();
+							
+							$('#endDateG__Container').show();
+						}
+					}
+					
+					function numbersOnly(e) {
+					var regex = new RegExp("[0-9]");
+					var key = String.fromCharCode(e.charCode ? event.which
+							: event.charCode);
+					if (!regex.test(key)) {
+						event.preventDefault();
+						return false;
+					}
+				}
+			
+						function captchaReload(){
+			$.ajax({
+		 	 url: '/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L2dBISEvZ0FBIS9nQSEh/p0/IZ7_62LC1H82K8AU806E55N3A13022=CZ6_62LC1H82K8AU806E55N3A130S3=NJns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cbfd=EcapchaId!capchaId==/',
+		 	 context: document.body
+			}).done(function() {
+				$(".captchaImg").attr("src",'/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeC1IAqLGY4GTkFGTsYGBu7-RlgVoFgSnJqnX5AbURkckK4IAAYCkQo!/dz/d5/L2dBISEvZ0FBIS9nQSEh/p0/IZ7_62LC1H82K8AU806E55N3A13022=CZ6_62LC1H82K8AU806E55N3A130S3=NJns_Z7_62LC1H82K8AU806E55N3A13022_j_id851510663_2870cbfd=EcapchaId!capchaId==/'+new Date().getTime());
+			});
+		}
+			
+		//]]>
+	</script>
+	
+</div>
+					</div><input type="hidden" name="viewns_Z7_62LC1H82K8AU806E55N3A13022_:ns_Z7_62LC1H82K8AU806E55N3A13022_j_id1525818921_5af22610_SUBMIT" value="1" /><input type="hidden" name="javax.faces.ViewState" id="javax.faces.ViewState" value="JdOvnyqmIyku+1/mfz8bBxTGxcRq0ehuRoHAeIJHSFOd2xtquEplXd0PuDvmszyq97qjXtNhPsABpH7tuLfff1+/Ax2Xk85fkYz6ZNqA9lWhstmTqENOsdmB6d+cSKVWHA/iVmJ8wnLH0Oo58D5F1Y+yEpNdfmQbLfq62k1XTN1kmNeh" /></form></span>
+			
+				
+</div>
+</div></div></div>
+</div>
+		</div>
+	</section>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+	<footer id="footerId" class="footer footer-innerpage">
+		<div class="footer-main">
+			<div class="container">
+				<div class="footer-grid-container">
+					<div class="footer-grid-item-1">
+						<h3>Social Media</h3>	
+						<div class="social-toolbar">								
+								<ul class="list-inline list-social">
+									<li><a href="http://www.youtube.com/user/moigovsa" alt="youtube" title="youtube" target="_blank"></a></li>
+									<li><a href="https://twitter.com/absher" alt="twitter" title="twitter" target="_blank"></a></li>
+									<li><a href="https://www.facebook.com/AbsherKSA" alt="facebook" title="facebook" target="_blank"></a></li>
+									<li><a href="https://www.snapchat.com/add/absher.sa" alt="snapchat" title="snapchat" target="_blank"></a></li>
+								</ul>							
+							</div>
+						<div class="accessibility-toolbar">
+							<h3>Accessibility Tools</h3>
+							<ul class="list-inline">
+								<li>
+									<a href="javascript:void(0)" class="a11y-font-resize a11y-font-resize__decrease" title="font resize toggle">
+										<span>A-</span>
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)" class="a11y-font-resize a11y-font-resize__increase" title="font resize toggle">
+										<span>A+</span>
+									</a>
+								</li>
+								<li class="hide">
+									<a href="javascript:void(0)" class="a11y-font-resize" title="font resize toggle">
+										<img src="https://www.absher.sa/portal/traffic/images/a11y-icons/zoom-in.svg" alt="font resize" />
+										<img src="https://www.absher.sa/portal/traffic/images/a11y-icons/zoom-out.svg" alt="font resize" style="display: none" />
+									</a>
+								</li>
+								<li>
+									<a href="javascript:void(0)" class="a11y-contrast-mode" title="contrast mode toggle">
+										<img src="https://www.absher.sa/portal/traffic/images/a11y-icons/eye.svg" alt="normal mode" />
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- <div class="deaf-toolbar">								
+								<a href="https://deaf.dga.gov.sa" target="_blank" class="deafbtn" alt="Deaf"><span class="img" alt="Deaf"></span>Sign Language Support</a>							
+							</div>	 -->
+<!-- 						<div class="download-toolbar">
+						<h3>Download Absher App</h3>								
+								<p class="store">
+									 <a href="https://apps.apple.com/sa/app/absher-%D8%A3%D8%A8%D8%B4%D8%B1/id1004966456" target="_blank"><span class="sprites appicon-ios"/></span></a>  
+									<a href="https://play.google.com/store/apps/details?id=sa.gov.moi" target="_blank"><span class="sprites appicon-android"/></span></a>
+									<a href="https://appgallery.huawei.com/#/app/C101687609" target="_blank"><span class="sprites appicon-huawei"></span></a>
+								</p>					
+							</div> -->														
+						<!-- <div class="col-md-12 vision-logo"></div> -->
+					</div>
+					<div class="footer-grid-item-2">
+						<h3>About Absher</h3>
+						<ul class="list-unstyled footer-list-links">
+							<li><a href="index.html#?uri=nm:oid:moi.absher.footer.about">About Absher</a></li>
+							<li><a href="index.html#?uri=nm:oid:moi.Privacy%2520Policy">Privacy Policy</a></li>
+							<li><a href="index.html#?uri=nm:oid:moi.Terms%2520of%2520Use">Terms of Use</a></li>
+							<li><a href="index.html#?uri=nm:oid:moi.absher.footer.news">News</a></li>
+							<li><a href="index.html#?uri=nm:oid:absher.footer.sla">Service level agreement</a></li>
+							<li><a href="index.html#?uri=nm:oid:absher.footer.accessibility">Accessibility</a></li>
+							<li><a href="index.html#?uri=nm:oid:absher.footer.sd">Statistical Data</a></li>
+							<li><a href="index.html#?uri=nm:oid:absher.footer.iss">Information security</a></li>
+						</ul>
+					</div>
+					<div class="footer-grid-item-3">
+						<h3>Contact and support</h3>
+						<ul class="list-unstyled footer-list-links">
+							<li><a href="index.html#?uri=nm:oid:moi.contact.content">Contact Us</a></li>
+							
+								<li><a href="https://www.my.gov.sa/wps/portal/snp/content/reportcorruption/!ut/p/z1/jY_LDoIwFES_hS_ovaUUXFZRCLGUytNuTFekiaIxxu_XdG9ldpOck8wQQyZiFvt2s325-2Kv3342_EJRFgUCVZk8bkDHJdOnlItOMzJ6oMY9lMhQAaMH0Hku6qTDCgdOzBq_ajKGAlCpONmC3slUiXZAgGSdDz8i4L9vPBJ64IHQRA8ENrT2SR63vp_ANbOIog-78zjs/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvZW4!/" target="_blank">Report Corruption (Nazaha)</a></li>
+							
+								
+							<li><a href="index.html#?uri=nm:oid:moi.footer.faqs">FAQs</a></li>
+							<li><a href="index.html#?uri=nm:oid:absher.footer.sc">Service channels</a></li>
+							<li><a href="index.html#?uri=nm:oid:absher.activation.offices">National ID Activation Channels</a></li>
+							<!-- <li><a href="#?uri=nm:oid:moi.absher.footer.marketing.contact">Marketing Contact</a></li>
+							<li><a href="#?uri=nm:oid:absher.userguide">User Manual</a></li> -->
+							<li><a href="index.html#?uri=nm:oid:absher.footer.subscribe">Registration and Subscription</a></li>
+
+						</ul>
+					</div>			
+					<div class="footer-grid-item-4">
+						<h3>Important Links</h3>
+						<ul class="list-unstyled footer-list-links">
+							<li><a href="https://www.moi.gov.sa" target="_blank">Ministry of Interior Portal</a></li>
+							<li><a href="https://www.my.gov.sa" target="_blank">National Unified Portal</a></li>
+							<li><a href="https://ai.sa/" target="_blank">National Strategy for Data &amp; Artificial Intelligence</a></li>
+							<li><a href="https://od.data.gov.sa" target="_blank">Open Data Platform</a></li>
+							<li><a href="https://eparticipation.my.gov.sa/en/" target="_blank">e-Participation Portal</a></li>
+
+							<li><a href="https://istitlaa.ncc.gov.sa/" target="_blank">Public Consultation Platform</a></li>
+							<li><a href="https://portal.etimad.sa/en-us" target="_blank">e-Procurement Platform</a></li>
+							<!-- <li><a href="https://www.mof.gov.sa/en/financialreport/Pages/default.aspx" target="_blank">Government Budget</a></li> -->
+							<li><a href="https://www.my.gov.sa/wps/portal/snp/content/mobileGovernment" target="_blank">Government Mobile Applications</a></li>													
+						</ul>
+					</div>		
+					<div class="footer-grid-item-5">
+						<div class="row">
+
+							<div class="col-sm-12 col-md-12 col-lg-12" style="padding: 0">
+								<a href="javascript: void(0)" style="cursor: default;" aria-label="Absher Customer Care Number 920020405" alt="Absher Customer Care Number 920020405" class="footer-brandlogo"></a>
+							</div>
+							<div class="col-sm-12 col-md-12 col-lg-12" style="padding: 0">
+							<!--							<div class="download-toolbar">
+						 <h3>Download Absher App</h3>	 -->							
+								<p class="foot-note nic-footer">
+									 <a href="https://apps.apple.com/sa/app/absher-%D8%A3%D8%A8%D8%B4%D8%B1/id1004966456" target="_blank" aria-label="Apple Store" alt="Apple Store"><span class="sprites appicon-ios"  alt="Apple Store"></span></a>  
+									<a href="https://play.google.com/store/apps/details?id=sa.gov.moi" target="_blank" aria-label="Google Play" alt="Google Play"><span class="sprites appicon-android" alt="Google Play"></span></a>
+									<a href="https://appgallery.huawei.com/#/app/C101687609" target="_blank" aria-label="huawei gallery" alt="huawei gallery"><span class="sprites appicon-huawei"  alt="huawei gallery"></span></a>
+								</p>					
+							</div>	
+						<!-- </div> -->
+							
+						</div>
+					</div>					
+				</div>
+			</div>
+		</div>		
+		<div class="footer-notes">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-4">
+						<ul class="list-inline">
+							<li><a href="index.html#?uri=nm:oid:moi.absher.footer.sitemap">Sitemap</a></li>							
+							<li><a href="index.html#?uri=nm:oid:moi.absher.footer.calendar">Calendar</a></li>
+						</ul>
+					</div>
+					<div class="col-sm-12 col-md-4">
+						<p class="text-center"><strong>Powered by National Information Center </strong><img src="https://www.absher.sa/portal/traffic/images/nic_footer_logo.png" alt="NIC"></p>
+					</div>
+					<div class="col-sm-12 col-md-5">						
+						<p id="footer-copyright" class="footerdescription">
+							Copyright © &lt;span id=&#034;footer_aryear&#034;&gt;&lt;/span&gt;AH - &lt;span id=&#034;footer_enyear&#034;&gt;&lt;/span&gt;G Absher, Kingdom of Saudi Arabia.
+							
+								
+									
+									<!-- &lt;br/&gt;External links are provided for reference purposes. Absher is not responsible for the content of external internet sites. -->
+								
+							
+						</p>						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	
+		<div id="advancedSearchPanel"></div>
+	
+<!-- Cookie disclaimer -->
+	<div id="cookDisMain">
+		<div class="inner-main">
+			<div class="cookDis">
+				<div class="cookDisInner">
+					<div class="col-md-9 col-sm-8 col-xs-12 cookMsg">
+						<div class="cookText">
+							<span class="enContents">This website uses cookies to uniquely identify you and understand your needs as a user to provide an ease of access and better user experience. By continuing using this website, you agree to the <a class="privacyLink" href="https://www.absher.sa/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeDRH5xYBLQkCos5jgZOQUZOxgYG7v5GWBWgWFSQG1HpmumoCABjROTb/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvZW4!/?uri=nm:oid:Z6_0O2MD1QCAF0QH4D5MF00000000" target="_blank">
+							<span class="enContents">Privacy Policy</span>
+						</a> of this website.<br/>
+					In addition users are able to refuse the user of cookies by configuring the browser settings.</a></span>
+							<span class="arContents">يستخدم هذا الموقع ملفات تعريف الارتباط للتعرف على المستخدم بشكل فريد و فهم احتياجاته كمستخدم لتوفير سهولة الوصول و تجربة مستخدم أفضل.
+							 من خلال الاستمرار في استخدام هذا الموقع فإنك توافق على <a class="privacyLink" href="https://www.absher.sa/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeDRH5xYBLQkCos5jgZOQUZOxgYG7v5GWBWgWFSQG1HpmumoCABjROTb/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvZW4!/?uri=nm:oid:Z6_0O2MD1QCAF0QH4D5MF00000000" target="_blank">
+							<span class="arContents">سياسة الخصوصية</span>
+						</a>لهذا الموقع.<br/>
+بالإضافة إلى ذلك, يستطيع المستخدم رفض استخدام ملفات تعريف الارتباط عن طريق ضبط إعدادات المتصفح.</span>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-4 col-xs-12 cookBtns">
+						<a href="javascript: void(0);" class="btn btnSolid round-button" onclick="cookAccept()">
+							<span class="arContents">موافق</span>
+							<span class="enContents">Agree</span>
+						</a>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="https://www.absher.sa/portal/traffic/js/bootstrap.js"></script>
+	<script type="text/javascript" src="https://www.absher.sa/portal/traffic/js/wow.min.js"></script>
+	<script type="text/javascript" src="https://www.absher.sa/portal/traffic/js/script.js?v=202404171813"></script>
+	
+	
+	
+	<script type="text/javascript" src="https://cdn.labiba.ai/static/js/bundleAbsher23.js" id="labibaWebChat"
+		storyId="2ea3d755-103f-4f5d-8288-905e13923124" baseURL="https://botbuilder.labiba.ai"
+		crossorigin="anonymous" integrity="sha256-KnZQeXGo9BGtU9uYT4/iW3UQYqqysu4lc0kV0YVwSHY=" async>
+	</script>
+	
+	
+	
+	<script> 
+		window['adrum-start-time'] = new Date().getTime(); 
+		(function(config){
+			config.appKey = 'EUM-AAB-AUA';
+			config.adrumExtUrlHttps = 'https://absher.sa/portal/individuals/js/adrum-files';
+			config.beaconUrlHttps = 'https://absher.sa/appdmon';
+			config.xd = {enable : true}; 
+		})(window['adrum-config'] || (window['adrum-config'] = {})); 
+	</script> 
+	<script src="https://www.absher.sa/portal/traffic/js/adrum-files/adrum-latest.js"></script>
+	    
+	
+	
+	
+	 
+	 
+	 
+	 	<script>
+	 		window.addEventListener("storage", funReInitialize, false);
+	 		$(document).ready(function(){
+
+	 			try{
+					if(localStorage.getItem("UserGuide") != null){
+					$(".before-login").find(".userguidelink").attr("href",localStorage.getItem("UserGuide"));
+					}
+				}
+				catch(e){
+
+				}
+
+	 			//console.log("localStorage.getItem(\"allstrgestartinactive\") == "+ localStorage.getItem("allstrgestartinactive"));
+	 			if(localStorage.getItem("allstrgestartinactive") != null && localStorage.getItem("allstrgestartinactive") == 'false'){
+	 				//console.log("$('.service-popup').length == "+ $('.service-popup').length);
+	 				var ispubHome = 'false';
+	 				//console.log("ispubHome == "+ ispubHome);
+	 				//console.log("($('.service-popup').length <= 1) && (ispubHome) == "+ ($('.service-popup').length <= 1) && (ispubHome == "true"));
+	 				if((($('.service-popup').length <= 1) && (ispubHome == "true"))){
+	 					//console.log("Popup Show");
+	 					showSessionPopup();
+	 				} else {
+	 					//console.log("Popup Hide & Remove Local Storage");
+	 					//hideSessionPopup();
+	 					localStorage.removeItem("allstrgestartinactive");
+	 				}
+	 			}
+	 			
+	 			function showSessionPopup (){
+					var popup ="session-exp-box";
+					initPopup(popup);
+				}
+				
+				function initPopup(popupId) {
+			  		popupId ='#'+popupId
+			
+					//Fade in the Popup and add close button
+					$(popupId).fadeIn(300);
+			
+					//Set the center alignment padding + border
+					var popMargTop = ($(popupId).height() + 24) / 2;
+					var popMargLeft = ($(popupId).width() + 24) / 2;
+			
+					$(popupId).css({
+						'margin-top' : -popMargTop,
+						'margin-left' : -popMargLeft
+					});
+			
+					// Add the mask to body
+					$('body').append('<div id="mask"></div>');
+					$('#mask').fadeIn(300);
+			  	}
+	 		});
+	 		
+	 		function funReInitialize(e){
+				if(localStorage.getItem("allstrgestartinactive") == null){
+					hideSessionPopup();
+				} 
+			}
+	 		
+	 		function hideSessionPopup(){
+				var popup ="session-exp-box";
+				$('#mask').remove();
+				$('#session-exp-box').hide();
+			}
+	 		
+	 		function sessionReload(typeOfAction){
+				if(!typeOfAction)
+					localStorage.removeItem("allstrgestartinactive");
+					
+				hideSessionPopup();
+				location.reload(true);
+			}
+	 		
+	 	</script>
+		<div id="session-exp-box" class="service-popup service-popup-medium">
+			<div class="service-popup_container">
+				<div class="service-popup_header">
+					<span>Session Expiry Alert</span>
+					<span class="modalClose"><i class="fa fa-close"></i></span>
+				</div>
+				<div class="service-popup_body">
+					<div>
+						<p class="sessionExpiry">
+							Your session is expired
+						</p>
+					</div>
+				</div>
+			
+				<div class="login_popup_buttons" style="width:100%;" align="center">
+					<div class="col-xs-6 text-right">
+						<button type="button" onclick="sessionReload(false)" value="" id="actionBtn">Start New Session</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	 
+	 	
+	
+	
+	
+	<script>
+		// Logic for session timeout
+		var dateEn = "25 Apr. 2024".slice(-4);
+		var dateAr = getTodayHijriDate(2024,4,25,'en').slice(-4);
+		$(document).ready(function(){
+			$("#footer-copyright").html($("#footer-copyright").text());
+			$("#footer_enyear").text(dateEn);
+			$("#footer_aryear").text(dateAr);
+			var defaultText = $(".bigErrorText").html();	
+			if((typeof defaultText != 'undefined' || defaultText != null) == true) {		
+				var currentLocale = "en";
+				//console.log("currentLocale :"+currentLocale);
+				var domainOrgin = document.location.origin;
+				if (!window.location.origin) 
+					domainOrgin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
+				else
+					domainOrgin = document.location.origin;
+				var targeturl_en = domainOrgin+"/wps/portal/individuals/Home/homepublic";	
+				var targeturl_ar = domainOrgin+"/wps/portal/individuals/Home/homepublic/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8ziDTxNTDwMTYy8DXxMTQwcvQK9Q51MAowNDAz0wwkpiAJJ4wCOIP1RWJQ4GjgFGTkB9bv7G2FVgGJGQW6EQaajoiIAD1lcgQ!!/dz/d5/L0lDUmlTUSEhL3dHa0FKRnNBLzROV3FpQSEhL2Fy/";
+				if(currentLocale == "en" || currentLocale == "en_US")
+					$(".bigErrorText").html(defaultText+"<br /><br />Please <a href='https://www.absher.sa/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeDRH5xYBLQkCos5jgZOQUZOxgYG7v5GWBWgWFSQG1HpmumoCABjROTb/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvZW4!/&quot;+targeturl_en+&quot;'>click here</a> to Login.");	
+				else
+					$(".bigErrorText").html(defaultText+"<br /><br />Ù„ØªØ³Ø¬ÙŠÙ„ Ø§Ù„Ø¯Ø®ÙˆÙ„ <a href='https://www.absher.sa/wps/portal/traffic/Home/querytrafficviolationinquiry/!ut/p/z1/04_iUlDg4tKPAFJABjKBwtGPykssy0xPLMnMz0vM0Y_Qj4wyizcz8nE29LAw8rZwDLUwMHM1NfUzdjQ0Ngg21g8npCAKKG2AAzga6HuBFeDRH5xYBLQkCos5jgZOQUZOxgYG7v5GWBWgWFSQG1HpmumoCABjROTb/dz/d5/L0lHSkovd0RNQUZrQUVnQSEhLzROVkUvZW4!/&quot;+targeturl_ar+&quot;'>Ø¥Ø¶ØºØ· Ù‡Ù†Ø§</a>.");	
+			}
+		});
+	</script>
+<div id="buttons">
+  <a href="index.html#f" id="show-chatbot" class="deafchatbtn" alt='Sign Language Support' title='Sign Language Support'><span class="img" alt="Ø£ØµÙ…"></span></a>
+</div>
+<script type="text/javascript" src="https://www.absher.sa/portal/traffic/js/deafsignchat.js?v=202404171813"></script>
+
+<script type="text/javascript" id="contentScript">
+$elem(document).ready(function(){
+    Import([
+    {
+        moduleName:"AdvancedSearch",
+        param:[{'id':'advancedSearchPanel'}]
+    }
+]);
+});
+</script>
+
+</body>
+</html>
